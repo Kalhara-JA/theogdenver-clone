@@ -140,7 +140,7 @@ const HeaderSecondary = () => {
             <nav className="site-nav" aria-label="Mobile main z-50">
               <ul className="site-nav-menu e" data-menu-type="mobile z-50">
                 <li>
-                  <Link href="/location/the-og-denver/" legacyBehavior>
+                  <Link href="/location" legacyBehavior>
                     <a className="site-nav-link">Hours &amp; Location</a>
                   </Link>
                 </li>
