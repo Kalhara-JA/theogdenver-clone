@@ -11,7 +11,7 @@ const MainContent = () => {
 
   return (
     <div className="site-content">
-      <div className="site-header-spacer-desktop" aria-hidden="true" style={{ height: isScrolled ? '150.875px' : '150.875px' }}></div>
+      <div className="site-header-spacer-desktop" aria-hidden="true" style={{ height: isScrolled ? '150.875px' : '70px' }}></div>
       <div className="site-header-spacer-mobile" aria-hidden="true" style={{ height: '92.475px' }}></div>
       <main className="site-content__main page-id--614001">
         <h1 className="sr-only">Home</h1>
@@ -210,7 +210,7 @@ const MainContent = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                @theogdenver
+                @strewth
               </a>
             </small>
           </h2>

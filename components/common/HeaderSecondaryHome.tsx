@@ -24,58 +24,33 @@ const HeaderSecondary = () => {
   };
 
   return (
-    <header className={`site-header ${isScrolled ? 'site-header-mobi--collapse' : ''}`} style={{ marginBottom: '34px' }}>
+    <header className={`site-header ${isScrolled ? 'site-header-mobi--collapse' : ''}`} style={{ top: '34px' }}>
       <a href="#main-content" className="skip">
         Skip to main content
       </a>
       <div className="site-header-desktop ">
-        {/* <div className="site-header-desktop-secondary">
-          <div className="container">
-            <div className="row">
-              <div className="site-location"> */}
-                {/* <a
-                  href="https://maps.google.com/?cid=17981716346260106472"
-                  className="site-location__address"
-                  target="_blank"
-                  rel="noopener"
-                  data-bb-track="button"
-                  data-bb-track-on="click"
-                  data-bb-track-category="Address"
-                  data-bb-track-action="Click"
-                  data-bb-track-label="Header"
-                  aria-describedby="audioeye_new_window_message"
-                >
-                  <span>1600 20th St,</span> <span> Denver, CO 80202</span>
-                </a>
-                <a
-                  className="site-location__tel"
-                  href="tel:720.769.1414"
-                  data-bb-track="button"
-                  data-bb-track-on="click"
-                  data-bb-track-category="Phone Number"
-                  data-bb-track-action="Click"
-                  data-bb-track-label="Header"
-                >
-                  720.769.1414
-                  <span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible">
-                    {' '}
-                    Phone number{' '}
-                  </span>
-                </a> */}
-              {/* </div>
-            </div>
-          </div>
-        </div> */}
+
         <div className={` site-header-desktop-primary site-header-desktop-primary--collapsed    ${isMobile || isScrolled ? ' overflow-auto border-red border-2' : ' '} `}
           data-header-sticky >
+          {!isScrolled && <div className="site-header-desktop-secondary">
+            <div className="container">
+              <div className="row">
+                <div className="site-location">
+                  <a href="https://maps.google.com/?cid=17981716346260106472" className="site-location__address" target="_blank" rel="noopener" data-bb-track="button" data-bb-track-on="click" data-bb-track-category="Address" data-bb-track-action="Click" data-bb-track-label="Header" aria-describedby="audioeye_new_window_message">
+                  <span>Rua de Malange</span> <span> nº 44 C, Junqueiro</span></a>
+                  <a className="site-location__tel" href="tel:720.769.1414" data-bb-track="button" data-bb-track-on="click" data-bb-track-category="Phone Number" data-bb-track-action="Click" data-bb-track-label="Header">720.769.1414<span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible"> Phone number </span></a>
+                </div>
+              </div>
+            </div>
+          </div>}
           <div className="flex flex-row w-full px-14 ">
+            {(!isHome || isScrolled) &&
               <div className="site-logo">
                 <a className="site-logo__btn" href="/" tabIndex={-1}>
-                  {(!isHome || isScrolled) && <img className="" src="logos/logo_primary_new.png" alt="The Original Denver Homepage" />}
+                  <img className="" src="logos/logo_primary_new.png" alt="The Original Denver Homepage" />
                   {/* <img className="site-logo__collapsed" src="logos/logo_primary_new.png" alt="icon" /> */}
                 </a>
-              </div>
-      
+              </div>}
             <nav className="site-nav w-full flex place-content-center justify-items-end text-right" aria-label="Main">
               <ul className={`site-nav-menu  ${isHome && !isScrolled ? 'text-center' : 'text-right'}`} data-menu-type={isMobile ? 'mobile' : 'desktop'}>
                 <li>
@@ -113,11 +88,11 @@ const HeaderSecondary = () => {
       <div className="site-header-mobi z-50" aria-label="Navigation Menu Modal">
         <div className="site-logo">
           <a className="site-logo__btn" href="/" tabIndex={isNavOpen ? -1 : 0}>
-            <img src="logos/logo_primary_new.png" alt="The Original Denver Homepage" />
+            <img src="logos/logo_primary_new.png" alt="Strewth Home Page" />
             <img src="logos/logo_primary_new.png" alt="icon" />
           </a>
         </div>
-        {/* <div className="site-location">
+        <div className="site-location">
           <a
             href="https://maps.google.com/?cid=17981716346260106472"
             className="site-location__address"
@@ -130,7 +105,7 @@ const HeaderSecondary = () => {
             data-bb-track-label="Header"
             aria-describedby="audioeye_new_window_message"
           >
-            <span>1600 20th St,</span> <span> Denver, CO 80202</span>
+            <span>Rua de Malange</span> <span> nº 44 C, Junqueiro</span>
           </a>
           <a
             className="site-location__tel"
@@ -147,7 +122,7 @@ const HeaderSecondary = () => {
               Phone number{' '}
             </span>
           </a>
-        </div> */}
+        </div>
         <button
           type="button"
           className={`nav-toggle-btn ${isNavOpen ? 'nav-toggle-btn--active' : ''}`}
@@ -191,12 +166,12 @@ const HeaderSecondary = () => {
                     <a className="site-nav-link">Private Events</a>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/online-ordering/" legacyBehavior>
                     <a className="site-nav-link">Order Online</a>
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a
                     className="site-nav-link"
                     href="https://sagehospitality.jobs/"
@@ -206,7 +181,7 @@ const HeaderSecondary = () => {
                   >
                     Careers
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     className="site-nav-link"
@@ -218,11 +193,11 @@ const HeaderSecondary = () => {
                     Privacy Policy
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/press/" legacyBehavior>
                     <a className="site-nav-link">Press</a>
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/contact/" legacyBehavior>
                     <a className="site-nav-link">Contact</a>
@@ -239,7 +214,7 @@ const HeaderSecondary = () => {
                     Privacy Policy
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <button
                     type="button"
                     className=""
@@ -254,8 +229,8 @@ const HeaderSecondary = () => {
                   >
                     Reservations
                   </button>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a
                     href="https://signup.e2ma.net/signup/1938343/1927657/"
                     className=""
@@ -265,7 +240,7 @@ const HeaderSecondary = () => {
                   >
                     Email Signup
                   </a>
-                </li>
+                </li> */}
               </ul>
             </nav>
             <div className="site-social site-social--bordered">
@@ -304,7 +279,7 @@ const HeaderSecondary = () => {
                 </li>
               </ul>
             </div>
-            {/* <div className="site-location">
+            <div className="site-location">
               <a
                 href="https://maps.google.com/?cid=17981716346260106472"
                 className="site-location__address"
@@ -317,7 +292,7 @@ const HeaderSecondary = () => {
                 data-bb-track-label="Header"
                 aria-describedby="audioeye_new_window_message"
               >
-                <span>1600 20th St,</span> <span> Denver, CO 80202</span>
+                <span>Rua de Malange</span> <span> nº 44 C, Junqueiro</span>
               </a>
               <a
                 className="site-location__tel"
@@ -334,7 +309,7 @@ const HeaderSecondary = () => {
                   Phone number{' '}
                 </span>
               </a>
-            </div> */}
+            </div>
           </div>
           <div className="site-powered-by">
             <a
@@ -343,7 +318,7 @@ const HeaderSecondary = () => {
               rel="noopener"
               aria-describedby="audioeye_new_window_message"
             >
-              
+
             </a>
           </div>
         </div>
