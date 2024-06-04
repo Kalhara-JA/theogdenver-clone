@@ -112,8 +112,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
   }, [currentIndex, interval]);
 
   return (
-    <div id="default-carousel" className="relative w-full" data-carousel="slide">
-      <CarouselContainer>
+    <div id="default-carousel" className="relative h-[75vh]" data-carousel="slide">
+      <CarouselContainer className='max-h-[75vh]'>
         {images.map((image, index) => (
           <Slide
             key={index}
@@ -123,7 +123,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
           >
             <img
               src={image}
-              className="block w-full h-full object-cover"
+              className="block w-full object-cover "
               alt={`Slide ${index + 1}`}
             />
           </Slide>
