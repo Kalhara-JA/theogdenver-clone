@@ -112,7 +112,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
   }, [currentIndex, interval]);
 
   return (
-    <div id="default-carousel" className="relative h-[75vh]" data-carousel="slide">
+    <div id="default-carousel" className="relative h-[75vh] " data-carousel="slide">
       <CarouselContainer className='max-h-[75vh]'>
         {images.map((image, index) => (
           <Slide

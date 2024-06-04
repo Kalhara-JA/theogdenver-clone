@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from 'react';
+import Carousel from '../common/Carousel';
+import ScrollToSection from '@/hooks/scrollToSection';
 
 interface MenuItem {
   name: string;
@@ -517,144 +519,206 @@ const MenusSection: React.FC = () => {
     ));
   };
 
+  const images = [
+    'images/44830237-From-the-Hip-Photo11d2.jpg',
+    'images/226340073-From-the-Hip-Photo_111d2.jpg',
+    'images/44830237-From-the-Hip-Photo11d2.jpg',
+  ];
+
   return (
-    <section id="menus" aria-label="menus-section" className="content revealable revealed">
-      <div className="tabs">
-        <ul className="tabs-nav" role="tablist">
-          <li role="presentation">
-            <a
-              id="tab-brunch-052023"
-              className={`btn btn-tabs ${activeTab === 'brunch-052023' ? 'active' : ''}`}
-              href="#brunch-052023"
-              role="tab"
-              aria-controls="brunch-052023"
-              aria-selected={activeTab === 'brunch-052023'}
-              onClick={() => handleTabClick('brunch-052023')}
-            >
-              Food Menu
-            </a>
-          </li>
-          <li role="presentation">
-            <a
-              id="tab-drinks"
-              className={`btn btn-tabs ${activeTab === 'drinks' ? 'active' : ''}`}
-              href="#drinks"
-              role="tab"
-              aria-controls="drinks"
-              aria-selected={activeTab === 'drinks'}
-              onClick={() => handleTabClick('drinks')}
-            >
-              Drink Menu
+    <div className="site-content">
+      <div className="site-header-spacer-desktop" aria-hidden="true" style={{ height: '108.275px' }}></div>
+      <div className="site-header-spacer-mobile" aria-hidden="true" style={{ height: '75.475px' }}></div>
+
+      <main className="site-content__main page-id--27523">
+        <span id="main-content" className="sr-only">Main content starts here, tab to start navigating</span>
+
+        <section id="hero" aria-label="hero-section" className="hero hero--no-content hero--gallery hero--scrollable revealable revealed" style={{ height: '0px' }}>
+          <button type="button" className="hero__scroll-btn arrow-btn arrow-btn--down" onClick={() => ScrollToSection('menus')} >
+            <span className="sr-only">Scroll Down to Content</span>
+          </button>
+
+          <div className="gallery gallery--fit gallery--dimmed" role="region" aria-label="carousel">
+            <span className="sr-only">The image gallery carousel displays a single slide at a time. Use the next and previous button to browse 5 slides. The following carousel hides non-visible slides from screen reader users. Use of next and previous buttons is necessary to see all slides.</span>
+            <Carousel images={images} />
+          </div>
+        </section>
+        <section id="menus" aria-label="menus-section" className="content revealable revealed">
+          <div className="tabs">
+            <ul className="tabs-nav" role="tablist">
+              <li role="presentation">
+                <a
+                  id="tab-brunch-052023"
+                  className={`btn btn-tabs ${activeTab === 'brunch-052023' ? 'active' : ''}`}
+                  href="#brunch-052023"
+                  role="tab"
+                  aria-controls="brunch-052023"
+                  aria-selected={activeTab === 'brunch-052023'}
+                  onClick={() => handleTabClick('brunch-052023')}
+                >
+                  Food Menu
+                </a>
+              </li>
+              <li role="presentation">
+                <a
+                  id="tab-drinks"
+                  className={`btn btn-tabs ${activeTab === 'drinks' ? 'active' : ''}`}
+                  href="#drinks"
+                  role="tab"
+                  aria-controls="drinks"
+                  aria-selected={activeTab === 'drinks'}
+                  onClick={() => handleTabClick('drinks')}
+                >
+                  Drink Menu
+                </a>
+              </li>
+            </ul>
+
+            <div className="tabs-content">
+              {activeTab === 'brunch-052023' && (
+                <section id="brunch-052023" className="tabs-panel tabs-panel--active tabs-panel--show" role="tabpanel" aria-labelledby="tab-brunch-052023">
+                  <div className="menu-description container-sm">
+                    <p>Available <strong role="heading" aria-level={2}>EVERY DAY OF THE WEEK</strong> 7am - 3pm</p>
+                  </div>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={3}>SHAREABLES</h2>
+                          </div>
+                          <ul>{renderMenuItems(foodMenuItems)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={3}>Brunch Entrées</h2>
+                          </div>
+                          <ul>{renderMenuItems(brunchEntrees)}</ul>
+                        </section>
+                      </div>
+                      <div className="col-md-6">
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={3}>SANDWICHES</h2>
+                            all sandwiches come with a choice of: crinkle cut fries, breakfast potatoes, side salad, or fruit cup
+                          </div>
+                          <ul>{renderMenuItems(sandwiches)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={3}>SALADS</h2>
+                            add fried or grilled chicken +7
+                          </div>
+                          <ul>{renderMenuItems(salads)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={3}>SIDES & MORE</h2>
+                          </div>
+                          <ul>{renderMenuItems(sidesAndMore)}</ul>
+                        </section>
+                        <section className="menu-section menu-section--text">
+                          <p>*Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.&nbsp;</p>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+              {activeTab === 'drinks' && (
+                <section id="drinks" className="tabs-panel tabs-panel--active tabs-panel--show" role="tabpanel" aria-labelledby="tab-drinks">
+                  <div className="menu-description container-sm">
+                    <p>It's not Drinking - It's Brunch!</p>
+                  </div>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>THE ORIGINAL BLOODY MARYS</h2>
+                          </div>
+                          <ul>{renderMenuItems(drinkMenuItems)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>MIMOSAS & SPRITZES</h2>
+                          </div>
+                          <ul>{renderMenuItems(mimosaMenuItems)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>SPARKLING WINE</h2>
+                            all of these wines feature female winemakers, owners, and/or cellar masters a.k.a. HBICs
+                          </div>
+                          <ul>{renderMenuItems(sparklingWineMenuItems)}</ul>
+                        </section>
+                      </div>
+                      <div className="col-md-6">
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>DRAFT BEERS</h2>
+                          </div>
+                          <ul>{renderMenuItems(draftBeers)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>THE SODA FOUNTAIN</h2>
+                          </div>
+                          <ul>{renderMenuItems(sodaFountain)}</ul>
+                        </section>
+                        <section className="menu-section">
+                          <div className="menu-section__header">
+                            <h2 role="heading" aria-level={2}>CANNED & BOTTLED BEER</h2>
+                          </div>
+                          <ul>{renderMenuItems(cannedAndBottledBeer)}</ul>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside className="hospitality revealable revealed">
+        <ul className="hospitality__list" role="presentation">
+          <li className="hospitality__item">
+            <a href="https://www.sagehospitality.com/restaurant-concepts/" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message">
+              <img
+                src="https://images.getbento.com/accounts/3c10e657dc5f2aa01b55394e8376688a/media/images/22322Hosp_logo.png?w=1200&fit=max&auto=compress,format|resize(786)"
+                className="False"
+                loading="lazy"
+                alt="logo"
+                style={{ objectPosition: 'none' }}
+              />
             </a>
           </li>
         </ul>
+      </aside>
 
-        <div className="tabs-content">
-          {activeTab === 'brunch-052023' && (
-            <section id="brunch-052023" className="tabs-panel tabs-panel--active tabs-panel--show" role="tabpanel" aria-labelledby="tab-brunch-052023">
-              <div className="menu-description container-sm">
-                <p>Available <strong role="heading" aria-level={2}>EVERY DAY OF THE WEEK</strong> 7am - 3pm</p>
-              </div>
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={3}>SHAREABLES</h2>
-                      </div>
-                      <ul>{renderMenuItems(foodMenuItems)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={3}>Brunch Entrées</h2>
-                      </div>
-                      <ul>{renderMenuItems(brunchEntrees)}</ul>
-                    </section>
-                  </div>
-                  <div className="col-md-6">
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={3}>SANDWICHES</h2>
-                        all sandwiches come with a choice of: crinkle cut fries, breakfast potatoes, side salad, or fruit cup
-                      </div>
-                      <ul>{renderMenuItems(sandwiches)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={3}>SALADS</h2>
-                        add fried or grilled chicken +7
-                      </div>
-                      <ul>{renderMenuItems(salads)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={3}>SIDES & MORE</h2>
-                      </div>
-                      <ul>{renderMenuItems(sidesAndMore)}</ul>
-                    </section>
-                    <section className="menu-section menu-section--text">
-                      <p>*Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.&nbsp;</p>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-          {activeTab === 'drinks' && (
-            <section id="drinks" className="tabs-panel tabs-panel--active tabs-panel--show" role="tabpanel" aria-labelledby="tab-drinks">
-              <div className="menu-description container-sm">
-                <p>It's not Drinking - It's Brunch!</p>
-              </div>
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-6">
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>THE ORIGINAL BLOODY MARYS</h2>
-                      </div>
-                      <ul>{renderMenuItems(drinkMenuItems)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>MIMOSAS & SPRITZES</h2>
-                      </div>
-                      <ul>{renderMenuItems(mimosaMenuItems)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>SPARKLING WINE</h2>
-                        all of these wines feature female winemakers, owners, and/or cellar masters a.k.a. HBICs
-                      </div>
-                      <ul>{renderMenuItems(sparklingWineMenuItems)}</ul>
-                    </section>
-                  </div>
-                  <div className="col-md-6">
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>DRAFT BEERS</h2>
-                      </div>
-                      <ul>{renderMenuItems(draftBeers)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>THE SODA FOUNTAIN</h2>
-                      </div>
-                      <ul>{renderMenuItems(sodaFountain)}</ul>
-                    </section>
-                    <section className="menu-section">
-                      <div className="menu-section__header">
-                        <h2 role="heading" aria-level={2}>CANNED & BOTTLED BEER</h2>
-                      </div>
-                      <ul>{renderMenuItems(cannedAndBottledBeer)}</ul>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-        </div>
-      </div>
-    </section>
+      {/* <aside className="mobi-footer mobi-footer--sticky">
+        <ul className="mobi-footer__list" role="presentation">
+          <li className="mobi-footer__item">
+            <button
+              type="button"
+              className="btn btn-brand btn-block"
+              data-popup="inline"
+              data-popup-src="#popup-reservations-form"
+              tabIndex={0}
+              data-bb-track="button"
+              data-bb-track-on="click"
+              data-bb-track-category="Reservations Trigger Button"
+              data-bb-track-action="Click"
+              data-bb-track-label="Callout, Footer"
+            >
+              Reservations
+            </button>
+          </li>
+        </ul>
+      </aside> */}
+    </div>
   );
 };
 

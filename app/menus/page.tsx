@@ -1,6 +1,8 @@
+import Carousel from '@/components/common/Carousel';
 import MenusSection from '@/components/menus/MenusSection';
 
 const HomePage: React.FC = () => {
+
   return (
     <div>
       <MenusSection />

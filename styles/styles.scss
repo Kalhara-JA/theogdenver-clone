@@ -12035,7 +12035,8 @@ section#lunch-dinner .col-md-6:last-child .menu-section:first-child h2:after {
   .col-md-6:first-child
   .menu-section:nth-child(odd)
   .menu-section__header {
-  background-color: #ffefef;
+  background-color: #cb4e47;
+  
   padding: 1.5rem 2rem 1rem 2rem;
   margin-bottom: 0;
   clip-path: polygon(
@@ -12051,7 +12052,7 @@ section#lunch-dinner .col-md-6:last-child .menu-section:first-child h2:after {
 }
 #menus .col-md-6:first-child .menu-section:nth-child(odd) > ul {
   padding-top: 1rem;
-  border: 2px solid #ffefef;
+  border: 2px solid #cb4e47;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
@@ -12061,7 +12062,7 @@ section#lunch-dinner .col-md-6:last-child .menu-section:first-child h2:after {
   .col-md-6:last-child
   .menu-section:nth-child(even)
   .menu-section__header {
-  background-color: #ffefef;
+  background-color: #cb4e47;
   padding: 1.5rem 2rem 1rem 2rem;
   margin-bottom: 0;
   clip-path: polygon(
@@ -12077,7 +12078,7 @@ section#lunch-dinner .col-md-6:last-child .menu-section:first-child h2:after {
 }
 #menus .col-md-6:last-child .menu-section:nth-child(even) > ul {
   padding-top: 1rem;
-  border: 2px solid #ffefef;
+  border: 2px solid #cb4e47;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
@@ -12114,7 +12115,7 @@ section#lunch-dinner .col-md-6:last-child .menu-section:first-child h2:after {
 .col-md-6:first-child .menu-section:nth-child(even) .menu-section__header,
 .col-md-6:first-child .menu-section:nth-child(even) h2,
 .col-md-6:first-child .menu-section:nth-child(even) p {
-  color: #f5f3ec;
+  color: #ffefef !important; 
 }
 .col-md-6:first-child .menu-section:nth-child(even) .menu-item__heading {
   color: #ffefef !important;

@@ -37,8 +37,8 @@ const HeaderSecondary = () => {
               <div className="row">
                 <div className="site-location">
                   <a href="https://maps.google.com/?cid=17981716346260106472" className="site-location__address" target="_blank" rel="noopener" data-bb-track="button" data-bb-track-on="click" data-bb-track-category="Address" data-bb-track-action="Click" data-bb-track-label="Header" aria-describedby="audioeye_new_window_message">
-                  <span>Rua de Malange</span> <span> nº 44 C, Junqueiro</span></a>
-                  <a className="site-location__tel" href="tel:720.769.1414" data-bb-track="button" data-bb-track-on="click" data-bb-track-category="Phone Number" data-bb-track-action="Click" data-bb-track-label="Header">720.769.1414<span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible"> Phone number </span></a>
+                  <span>Rua de Malange,</span> <span> nº 44 C, Junqueiro</span></a>
+                  {/* <a className="site-location__tel" href="tel:720.769.1414" data-bb-track="button" data-bb-track-on="click" data-bb-track-category="Phone Number" data-bb-track-action="Click" data-bb-track-label="Header">720.769.1414<span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible"> Phone number </span></a> */}
                 </div>
               </div>
             </div>
@@ -105,9 +105,9 @@ const HeaderSecondary = () => {
             data-bb-track-label="Header"
             aria-describedby="audioeye_new_window_message"
           >
-            <span>Rua de Malange</span> <span> nº 44 C, Junqueiro</span>
+            <span>Rua de Malange,</span> <span> nº 44 C, Junqueiro</span>
           </a>
-          <a
+          {/* <a
             className="site-location__tel"
             href="tel:720.769.1414"
             data-bb-track="button"
@@ -120,8 +120,8 @@ const HeaderSecondary = () => {
             <span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible">
               {' '}
               Phone number{' '}
-            </span>
-          </a>
+            </span> 
+          </a>*/}
         </div>
         <button
           type="button"
@@ -203,7 +203,7 @@ const HeaderSecondary = () => {
                     <a className="site-nav-link">Contact</a>
                   </Link>
                 </li>
-                <li className="site-nav-menu__item">
+                {/* <li className="site-nav-menu__item">
                   <a
                     className="site-nav-menu__btn"
                     href="https://www.sagehospitalitygroup.com/privacy-policy"
@@ -213,7 +213,7 @@ const HeaderSecondary = () => {
                   >
                     Privacy Policy
                   </a>
-                </li>
+                </li> */}
                 {/* <li>
                   <button
                     type="button"

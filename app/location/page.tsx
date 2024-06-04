@@ -1,8 +1,11 @@
+"use client"
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Carousel from '@/components/common/Carousel';
+import ScrollToSection from '@/hooks/scrollToSection';
 
 const Content: React.FC = () => {
 
@@ -21,7 +24,7 @@ const Content: React.FC = () => {
                 <span id="main-content" className="sr-only">Main content starts here, tab to start navigating</span>
 
                 <section id="hero" aria-label="hero-section" className="hero hero--no-content hero--gallery hero--scrollable revealable revealed" style={{ height: '0px' }}>
-                    <button type="button" className="hero__scroll-btn arrow-btn arrow-btn--down">
+                    <button type="button" className="hero__scroll-btn arrow-btn arrow-btn--down" onClick={() => ScrollToSection('intro')} >
                         <span className="sr-only">Scroll Down to Content</span>
                     </button>
 
@@ -45,10 +48,10 @@ const Content: React.FC = () => {
                             data-bb-track-label="Location"
                             aria-describedby="audioeye_new_window_message"
                         >
-                            1600 20th St,<br /> Denver, CO 80202
+                            Rua de Malange,<br /> nº 44 C, Junqueiro
                         </a>
                         <br />
-                        <a
+                        {/* <a
                             href="tel:720.769.1414"
                             data-bb-track="button"
                             data-bb-track-on="click"
@@ -57,12 +60,11 @@ const Content: React.FC = () => {
                             data-bb-track-label="Location"
                         >
                             720.769.1414<span style={{ display: 'none' }} className="ae-compliance-indent ae-reader-visible"> Phone number </span>
-                        </a>
+                        </a> */}
                     </p>
-                    <p><strong>OPEN EVERY DAY OF WEEK!</strong><br />7 AM - 3 PM</p>
-                    <p>*(Hours may vary based on Rockies home games / other events)*</p>
-                    <p>Located in the heart of Denver's bustling McGregor Square, The Original, fondly known by locals as "The OG," redefines the brunch experience. Renowned as a premier brunch destination in Denver, The OG excels in crafting exquisite breakfast, lunch and brunch dishes. As a celebrated brunch spot near Coors Field, we pride ourselves on being pioneers in the culinary scene, offering an unforgettable dining experience. Whether you're seeking the best brunch in Denver, a delightful breakfast near Coors Field, or a lunch spot that combines innovation with classic flavors, The OG stands as your go-to destination. Join us at The OG, where every dish is a testament to our passion for exceptional brunch experiences.</p>
-                    <p>Valet parking is also available at The Rally Hotel for $15 on Wazee Street between 19th and 20th.</p>
+                    <p><strong>OPEN WEDNESDAY - SUNDAY</strong><br /><strong>CLOSED MONDAY & TUESDAY</strong><br />7 AM - 2 PM & 6 PM - 11 PM</p>
+                    <p>*(Hours may vary based on weather and motivation)*</p>
+                    <p>Located in Junqueiro, Carcavelos near the park, Strewth , fondly known by locals as "when is it opening", Join us for early coffee and breakfast and at night great pizza and beer.</p>
                 </section>
 
                 {/* <section className="gmaps__container revealable revealed">
@@ -94,8 +96,8 @@ const Content: React.FC = () => {
                         tabIndex={-1}
                         style={{ position: 'relative', overflow: 'hidden' }}
                     > */}
-                        {/* Insert the Google Maps iframe or script here */}
-                    {/* </div>
+                {/* Insert the Google Maps iframe or script here */}
+                {/* </div>
                 </section> */}
             </main>
 

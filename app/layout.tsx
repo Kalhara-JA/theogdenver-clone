@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className=" touchevents svgasimg placeholder csstransitions csstransforms hashchange inputtypes-search inputtypes-tel inputtypes-url inputtypes-email no-inputtypes-datetime inputtypes-date inputtypes-month inputtypes-week inputtypes-time inputtypes-datetime-local inputtypes-number inputtypes-range inputtypes-color objectfit object-fit no-maybemobile wf-roboto-n3-active wf-cabin-n7-active wf-active">
+      <head>
+        <link
+          rel="icon"
+          href="/icon.jpg"
+          type="image/jpg"
+        />
+      </head>
       <body className={inter.className + `has-hero-intent has-hospitality has-mobi-footer index-template has-nav-address-bar`}>
         <HeaderSecondary />
         {children}
